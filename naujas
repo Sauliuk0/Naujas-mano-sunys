@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Šunų platformos prototipo karkasas</title>
+  <style>
+    :root{
+      --accent:#2563eb;
+      --bg:#f8fafc;
+      --fg:#0f172a;
+      --muted:#64748b;
+      --surface:#ffffff;
+      --radius:14px;
+      --gap:18px;
+      --max:1200px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      color:var(--fg); background:var(--bg);
+    }
+    header{
+      position:sticky; top:0; z-index:100;
+      background:var(--surface); border-bottom:1px solid #e2e8f0;
+    }
+    .wrap{
+      max-width:var(--max); margin:0 auto; padding:0 16px;
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between; height:64px;
+    }
+    nav .logo{ font-weight:700; font-size:18px; }
+    nav ul{
+      display:flex; gap:14px; list-style:none; margin:0; padding:0;
+    }
+    nav a{
+      text-decoration:none; color:var(--fg); font-size:14px; padding:8px 10px; border-radius:8px;
+    }
+    nav a:hover{
+      background:#eef2ff; color:var(--accent);
+    }
+    .hero{
+      padding:56px 0 32px;
+      background:linear-gradient(135deg,#fff, #f1f5f9);
+      border-bottom:1px solid #e2e8f0;
+    }
+    .hero h1{ font-size:34px; line-height:1.15; margin:0 0 16px; }
+    .hero p{ color:var(--muted); max-width:640px; margin:0 0 24px; }
+    .cta-grid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:var(--gap); margin-top:24px;
+    }
+    .card{
+      background:var(--surface); border:1px solid #e2e8f0; border-radius:var(--radius);
+      padding:18px 16px; box-shadow:0 1px 2px rgba(0,0,0,.04);
+    }
+    .card h3{ margin:0 0 8px; font-size:18px; }
+    .card p{ margin:0 0 12px; color:var(--muted); font-size:14px; }
+    .btn{
+      display:inline-block; background:var(--accent); color:#fff; padding:10px 14px; border-radius:10px;
+      text-decoration:none; font-weight:600; font-size:14px;
+    }
+    .btn.outline{
+      background:transparent; color:var(--accent); border:1px solid var(--accent);
+    }
+    section{
+      padding:56px 0; scroll-margin-top:80px;
+    }
+    section h2{
+      margin:0 0 8px; font-size:26px;
+    }
+    section > p{
+      color:var(--muted); margin:0 0 26px;
+    }
+    .grid{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:var(--gap);
+    }
+    .badge{
+      display:inline-block; background:#fee2e2; color:#b91c1c;
+      font-size:12px; font-weight:600; padding:2px 8px; border-radius:999px;
+      margin-left:8px;
+    }
+    .ad{
+      background:#fff7ed; border:1px dashed #f97316; color:#9a3412; text-align:center;
+      padding:28px 16px; border-radius:var(--radius);
+    }
+    footer{
+      background:#0f172a; color:#cbd5e1; padding:40px 0; margin-top:64px;
+    }
+    footer a{ color:#e2e8f0; text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+    .muted{ color:var(--muted); }
+    @media (max-width:768px){
+      .hero h1{ font-size:28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">🐾 Šunų platforma</div>
+      <ul>
+        <li><a href="#dresuotojai">Dresuotojai</a></li>
+        <li><a href="#mokyklos">Mokyklos</a></li>
+        <li><a href="#viešbučiai">Viešbučiai</a></li>
+        <li><a href="#veisėjai">Veisėjai</a></li>
+        <li><a href="#video">Video pamokos</a></li>
+        <li><a href="#nuotoliniai">Nuotoliniai mokymai</a></li>
+        <li><a href="#naudotos">Naudotos prekės</a></li>
+        <li><a href="#dingę">Dingę / rasti</a></li>
+        <li><a href="#renginiai">Renginiai</a></li>
+        <li><a href="#blogas">Naudinga</a></li>
+        <li><a href="#kontaktai">Kontaktai</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Rask dresuotoją, pamokas, bendruomenę ir paslaugas – vienoje vietoje</h1>
+      <p>Moderni šunų mylėtojų platforma: dresuotojai, mokyklos, video pamokos, nuotoliniai mokymai, naudotos prekės, dingusių augintinių paieška ir dar daugiau.</p>
+
+      <div class="cta-grid">
+        <div class="card">
+          <h3>🔍 Ieškai dresuotojo?</h3>
+          <p>Filtruok pagal miestą, kainą, metodiką ir įvertinimus.</p>
+          <a href="#dresuotojai" class="btn">Eiti į dresuotojus</a>
+        </div>
+        <div class="card">
+          <h3>🛍️ Nori parduoti naudotą daiktą?</h3>
+          <p>Įkelk skelbimą, gauk pirkėją. Su pardavėjo vertinimu.</p>
+          <a href="#naudotos" class="btn">Į naudotas prekes</a>
+        </div>
+        <div class="card">
+          <h3>🐶 Pametei ar radai gyvūną?</h3>
+          <p>Sujunkime Lietuvą – padėkime surasti šeimininkus.</p>
+          <a href="#dingę" class="btn">Skelbti / peržiūrėti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REKLAMOS VIETA -->
+  <section>
+    <div class="wrap">
+      <div class="ad">
+        <strong>Reklamos vieta</strong><br>
+        Čia bus rodomi partnerių / rėmėjų baneriai (mokama skiltis).
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. DRESUOTOJAI -->
+  <section id="dresuotojai">
+    <div class="wrap">
+      <h2>Dresuotojai</h2>
+      <p>Filtruok pagal miestą, kainą, patirtį, metodiką. Palik atsiliepimą ir vertinimą ⭐️</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Vardas Pavardė</h3>
+          <p>Vilnius • 5 metų patirtis • Grupiniai ir individualūs</p>
+          <a href="#" class="btn outline">Peržiūrėti profilį</a>
+        </div>
+        <div class="card">
+          <h3>Instruktorius X</h3>
+          <p>Kaunas • Elgsenos problemos • Vyksta į namus</p>
+          <a href="#" class="btn outline">Peržiūrėti profilį</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MOKYKLOS -->
+  <section id="mokyklos">
+    <div class="wrap">
+      <h2>Dresūros mokyklos</h2>
+      <p>Profiliai su instruktorių sąrašu, atsiliepimais ir kursais.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Mokykla A</h3>
+          <p>Vilnius • 4 instruktoriai • Šuniukų ir elgsenos kursai</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+        <div class="card">
+          <h3>Mokykla B</h3>
+          <p>Kaunas • 3 instruktoriai • Socializacijos programos</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. VIEŠBUČIAI -->
+  <section id="viešbučiai">
+    <div class="wrap">
+      <h2>Šunų viešbučiai</h2>
+      <p>Rask, kur palikti augintinį saugiai: kainos, sąlygos, atsiliepimai.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Viešbutis „Pėdutė“</h3>
+          <p>Vilniaus r. • 24/7 priežiūra • Vaizdo kameros</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. VEISĖJAI -->
+  <section id="veisėjai">
+    <div class="wrap">
+      <h2>Veislynai / veisėjai</h2>
+      <p>Veislės, kontaktai, atsakomybė ir atsiliepimai.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Veislynas „ABC“</h3>
+          <p>Borderkoliai • Vilnius</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VIDEO PAMOKOS -->
+  <section id="video">
+    <div class="wrap">
+      <h2>Video pamokos (vienetai ar paketai)</h2>
+      <p>Užrakinama po apmokėjimo. Tu gauni komisinį nuo pardavimų.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>„Šuniuko startas“ (paketas)</h3>
+          <p>10 pamokų • 39 € • Prieiga 6 mėn.</p>
+          <a href="#" class="btn">Pirkti / peržiūrėti demo</a>
+        </div>
+        <div class="card">
+          <h3>„Pavadžio kontrolė“ (vienetinis)</h3>
+          <p>1 pamoka • 7 €</p>
+          <a href="#" class="btn">Pirkti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. NUOTOLINIAI MOKYMAI -->
+  <section id="nuotoliniai">
+    <div class="wrap">
+      <h2>Nuotoliniai grupiniai mokymai (gyvai)</h2>
+      <p>Registruokis į būsimas gyvas paskaitas. Priminsime prieš startą.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Elgsenos problemos: nuo ko pradėti?</h3>
+          <p>2025-08-10 • 19:00 • 90 min</p>
+          <a href="#" class="btn">Registruotis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. NAUDOTOS PREKĖS -->
+  <section id="naudotos">
+    <div class="wrap">
+      <h2>Naudotos prekės</h2>
+      <p>Parduok, pirk, vertink pardavėjus ⭐️</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Guolis L dydžio</h3>
+          <p>20 € • Kaunas • Pardavėjas: Jonas (⭐️4.9)</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+        <div class="card">
+          <h3>Pavadėlis (naujas)</h3>
+          <p>8 € • Vilnius • Pardavėjas: Rasa (⭐️5.0)</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+      <br>
+      <a href="#" class="btn">Įkelti skelbimą</a>
+    </div>
+  </section>
+
+  <!-- 8. DINGĘ / RASTI -->
+  <section id="dingę">
+    <div class="wrap">
+      <h2>Dingę ir rasti gyvūnai</h2>
+      <p>Sujunkime informaciją visoje Lietuvoje.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Dingęs: šuo „Rikis“</h3>
+          <p>Vilnius, Justiniškės • 2025-07-20</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+        <div class="card">
+          <h3>Rastas: biglis be antkaklio</h3>
+          <p>Kaunas, Šilainiai • 2025-07-22</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+      <br>
+      <a href="#" class="btn">Skelbti naują pranešimą</a>
+    </div>
+  </section>
+
+  <!-- 9. RENGINIAI -->
+  <section id="renginiai">
+    <div class="wrap">
+      <h2>Renginiai</h2>
+      <p>Organizatoriai gali patys paskelbti renginį <span class="badge">vėliau – mokama</span></p>
+      <div class="grid">
+        <div class="card">
+          <h3>Grupinis pasivaikščiojimas</h3>
+          <p>2025-08-05 • Vingio parkas • Nemokama</p>
+          <a href="#" class="btn outline">Daugiau</a>
+        </div>
+      </div>
+      <br>
+      <a href="#" class="btn">Paskelbti renginį</a>
+    </div>
+  </section>
+
+  <!-- 10. BLOGAS -->
+  <section id="blogas">
+    <div class="wrap">
+      <h2>Naudingos žinios (blogas)</h2>
+      <p>SEO draugiški straipsniai: dresūra, elgsena, sveikata, šuniuko priežiūra.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Kaip pasirinkti dresuotoją?</h3>
+          <p>Trumpas gidukas naujiems šeimininkams.</p>
+          <a href="#" class="btn outline">Skaityti</a>
+        </div>
+        <div class="card">
+          <h3>5 dažniausios klaidos su šuniuku</h3>
+          <p>Praktiniai patarimai, kaip jų išvengti.</p>
+          <a href="#" class="btn outline">Skaityti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. BENDRUOMENĖ -> FB -->
+  <section id="bendruomene">
+    <div class="wrap">
+      <h2>Bendruomenė</h2>
+      <p>Diskusijos ir klausimai vyksta mūsų Facebook grupėje – taip neapkrauname platformos.</p>
+      <a href="https://facebook.com" target="_blank" class="btn">Eiti į Facebook grupę</a>
+    </div>
+  </section>
+
+  <!-- 12. PASIŪLYK FUNKCIJĄ -->
+  <section id="pasiulyk">
+    <div class="wrap">
+      <h2>Pasiūlyk, ko trūksta platformoje</h2>
+      <p>Tavo idėjos padeda mums tobulėti.</p>
+      <a href="#" class="btn outline">Pateikti pasiūlymą</a>
+    </div>
+  </section>
+
+  <!-- KONTAKTAI / TAISYKLĖS -->
+  <section id="kontaktai">
+    <div class="wrap">
+      <h2>Kontaktai, taisyklės ir administracija</h2>
+      <p>Greitai susisiek su mumis, jei turi klausimų, idėjų ar pastebėjimų.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Kontaktai</h3>
+          <p>info@sunu-platforma.lt<br>+370 6xx xxx xx</p>
+        </div>
+        <div class="card">
+          <h3>Taisyklės</h3>
+          <p>Naudotojų elgesio politika, atsakomybės, privatumas.</p>
+          <a href="#" class="btn outline">Peržiūrėti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2025 Šunų platforma. Visiška bendruomenė vienoje vietoje.</p>
+    <p class="muted">Sukurta pagal tavo viziją. „Forumas“ → FB, „Naudotos prekės“ vietoje „Registruoti augintiniai“, „Dingę ir rasti gyvūnai“ – įtraukta.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+Pridėtas index.html
